@@ -18,11 +18,9 @@ servo1 = GPIO.PWM(11,50)
 
 servo1.start(0)
 
-
 browser = webdriver.Firefox(options=options)
 
 browser.implicitly_wait(5)
-
 
 browser.get('https://www.instagram.com/')
 print("on login page")
@@ -35,14 +33,10 @@ browser.implicitly_wait(10)
 
 sleep(4)
 
-
 username_input = browser.find_element_by_css_selector("input[name='username']")
-
 password_input = browser.find_element_by_css_selector("input[name='password']")
 
-
 username_input.send_keys("<put username here>")
-
 password_input.send_keys("<put password here>")
 
 print("username and password input")
@@ -86,12 +80,10 @@ while(followers < 1000):
 
         servo1.ChangeDutyCycle(2)
         sleep(2)
-        servo1.ChangeDutyCycle(0)
-        
+        servo1.ChangeDutyCycle(0)   
 
     followers = prevFollowers
     browser.refresh()
-
 
 browser.close()
 
